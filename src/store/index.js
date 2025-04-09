@@ -8,243 +8,283 @@ export default new Vuex.Store({
     products: [
       {
         id: 1,
-        name: 'Pakora Mix',
-        price: 250,
-        image: 'https://m.media-amazon.com/images/I/819X7JN2NnL._AC_UL640_FMwebp_QL65_.jpg',
-        description: 'Delicious pakora mix for making crispy fritters.',
-        category: 'snacks'
+        name: 'Disney Toy Story 4 Wind-Up Toy - Random Character',
+        price: 2990,
+        image: 'https://m.media-amazon.com/images/I/61Zaa2ZH6ZL._AC_UL640_FMwebp_QL65_.jpg',
+        description: 'Perfect for Toy Story fans. Features moving arms and walking function with popular characters.',
+        category: 'Toy Story'
       },
       {
         id: 2,
-        name: 'Samosa',
-        price: 300,
-        image: 'https://m.media-amazon.com/images/I/715lxTiPqsL._AC_UL640_FMwebp_QL65_.jpg',
-        description: 'Traditional savory pastry filled with spiced potatoes.',
-        category: 'snacks'
+        name: 'Disney Toy Story 4 Die-Cast Collection - Random Character',
+        price: 2990,
+        image: 'https://m.media-amazon.com/images/I/71d1PCram6L._AC_UL640_FMwebp_QL65_.jpg',
+        description: 'High-quality die-cast figurines for collectors with movable head, knees, and arms. Perfect for display.',
+        category: 'Toy Story'
       },
       {
         id: 3,
-        name: 'Nimko Mix',
-        price: 200,
-        image: 'https://supercrisp.com.pk/wp-content/uploads/2021/05/nimko-mix-pack.png',
-        description: 'Spicy and crunchy snack mix perfect for tea time.',
-        category: 'snacks'
+        name: 'Disney Strawberry Bear Plush Toy - Scented Edition 38CM',
+        price: 2990,
+        image: 'https://ext.same-assets.com/2965724184/4251015551.jpeg',
+        description: 'Scented strawberry bear plush toy for sensory play and cuddles.',
+        category: 'Toy Story'
       },
       {
         id: 4,
-        name: 'Aloo Chips',
-        price: 150,
-        image: 'https://m.media-amazon.com/images/I/71P7vdPvKNL._AC_UL640_FMwebp_QL65_.jpg',
-        description: 'Crispy potato chips with a hint of spice.',
-        category: 'chips'
+        name: 'Disney Toy Story 100-Piece Boxed Puzzle',
+        price: 2990,
+        image: 'https://m.media-amazon.com/images/I/81QcX0ObbKL._AC_UL640_FMwebp_QL65_.jpg',
+        description: 'Disney Toy Story 100-piece puzzle suitable for children aged 5 and above.',
+        category: 'Toy Story'
       },
       {
         id: 5,
-        name: 'Chaat Masala',
-        price: 120,
-        image: 'https://m.media-amazon.com/images/I/61L9omEKgmL._AC_UL640_FMwebp_QL65_.jpg',
-        description: 'Tangy spice mix for chaat and snacks.',
-        category: 'spices'
+        name: 'LeSen Robot Toy Story Edition',
+        price: 3375,
+        image: 'https://m.media-amazon.com/images/I/81InbTsFGbL._AC_UL640_FMwebp_QL65_.jpg',
+        description: 'Smart robot controllable through companion app with Toy Story themes.',
+        category: 'Toy Story'
       },
       {
         id: 6,
-        name: 'Sev',
-        price: 180,
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgWi0Rhj6uF1noovrdZ_y9kZRV57kIN2qJQ&s',
-        description: 'Crispy chickpea flour noodles perfect for topping or snacking.',
-        category: 'snacks'
+        name: 'Disney Strawberry Bear Plush Classic Edition 50CM',
+        price: 3990,
+        image: 'https://ext.same-assets.com/974841265/1209364044.jpeg',
+        description: 'Classic edition strawberry bear plush toy in large 50cm size.',
+        category: 'Toy Story'
       },
       {
         id: 7,
-        name: 'Biscuits',
-        price: 100,
-        image: 'https://m.media-amazon.com/images/I/51ofrEdsDrL._AC_UL640_FMwebp_QL65_.jpg',
-        description: 'Sweet tea biscuits, perfect with chai.',
-        category: 'biscuits'
+        name: 'Toy Story Buzz Lightyear Spaceship Set',
+        price: 4990,
+        image: 'https://m.media-amazon.com/images/I/71rL5zB1UZL._AC_UL640_FMwebp_QL65_.jpg',
+        description: 'Spaceship set including Buzz Lightyear action figure with authentic movie details.',
+        category: 'Toy Story'
       },
       {
         id: 8,
-        name: 'Mathri',
-        price: 220,
-        image: 'https://m.media-amazon.com/images/I/812kUnIVd8L._AC_UL640_FMwebp_QL65_.jpg',
-        description: 'Flaky, savory crackers made with wheat flour.',
-        category: 'snacks'
+        name: 'Toy Story Woody Cowboy Set',
+        price: 4590,
+        image: 'https://ext.same-assets.com/1570092308/2410553395.jpeg',
+        description: 'Woody cowboy action figure with accessories from the beloved movie.',
+        category: 'Toy Story'
       },
       {
         id: 9,
-        name: 'Dahi Baray Mix',
-        price: 280,
-        image: 'https://www.shanfoods.com/wp-content/uploads/2016/11/dahi-bara-mix-8.png',
-        description: 'Ready mix for making delicious dahi baray.',
-        category: 'mixes'
+        name: 'Toy Story Alien Plush Toy',
+        price: 1290,
+        image: 'https://m.media-amazon.com/images/I/51wVGuha3FL._AC_UL640_FMwebp_QL65_.jpg',
+        description: 'Adorable three-eyed alien plush toy from the classic movie.',
+        category: 'Toy Story'
       },
       {
         id: 10,
-        name: 'Zeera Biscuits',
-        price: 130,
-        image: 'https://m.media-amazon.com/images/I/41Jky3h2+XL._AC_UL640_FMwebp_QL65_.jpg',
-        description: 'Savory cumin-flavored biscuits.',
-        category: 'biscuits'
+        name: 'Toy Story Slinky Dog Plush',
+        price: 1590,
+        image: 'https://www.toysrus.com.hk/dw/image/v2/BDGJ_PRD/on/demandware.static/-/Sites-master-catalog-toysrus/default/dw0dcb6bc3/2/3/c/4/23c42bfdb8c13f5181daff536eecf6e414c8a630_165217_i1.jpg?sw=900&sh=900&q=75',
+        description: 'Slinky Dog plush toy suitable for children aged 3 and above.',
+        category: 'Toy Story'
       },
       {
         id: 11,
-        name: 'Peanuts',
-        price: 160,
-        image: 'https://m.media-amazon.com/images/I/51q9Kq0dIuL._AC_UL640_FMwebp_QL65_.jpg',
-        description: 'Roasted and salted peanuts.',
-        category: 'nuts'
+        name: 'Toy Story Bo Peep Shepherd Set',
+        price: 3990,
+        image: 'https://m.media-amazon.com/images/I/711K03aVaNL._AC_UL640_FMwebp_QL65_.jpg',
+        description: 'Bo Peep shepherd figure with accessories from the movie.',
+        category: 'Toy Story'
       },
       {
         id: 12,
-        name: 'Daal Moth',
-        price: 240,
-        image: 'https://cliftonnimco.com/wp-content/uploads/2018/04/Dal-Moth.jpg',
-        description: 'Savory lentil snack mix with nuts and spices.',
-        category: 'snacks'
+        name: 'Toy Story Rex Plush Toy',
+        price: 2590,
+        image: 'https://m.media-amazon.com/images/I/71flfRxZ1mL._AC_UL640_FMwebp_QL65_.jpg',
+        description: 'Adorable Rex dinosaur plush toy for cuddles and play.',
+        category: 'Toy Story'
       },
       {
         id: 13,
-        name: 'Shakarparay',
-        price: 190,
-        image: 'https://usamabakers.com.pk/wp-content/uploads/2024/09/Shakarparay.png',
-        description: 'Sweet and crispy diamond-shaped pastries.',
-        category: 'sweets'
+        name: 'Toy Story Hamm Piggy Bank',
+        price: 1890,
+        image: 'https://m.media-amazon.com/images/I/41SFpp0Q9xL._AC_UL640_FMwebp_QL65_.jpg',
+        description: 'Hamm piggy bank figure from Toy Story for saving and play.',
+        category: 'Toy Story'
       },
       {
         id: 14,
-        name: 'Murukku',
-        price: 170,
-        image: 'https://m.media-amazon.com/images/I/41kxrTCElrL._AC_UL640_FMwebp_QL65_.jpg',
-        description: 'Crunchy spiral-shaped snack made from rice and urad dal flour.',
-        category: 'snacks'
+        name: 'Toy Story Character Storage Box',
+        price: 2990,
+        image: 'https://img.cloudimg.in/uploads/shops/25837/products/f6/f65fbd0911ac8cb99a096a5bcee935b6.jpg',
+        description: 'Character-shaped storage box, practical and fun.',
+        category: 'Toy Story'
       },
       {
         id: 15,
-        name: 'Bhakarwadi',
-        price: 210,
-        image: 'https://m.media-amazon.com/images/I/61OUtvXsiQL._AC_UL640_FMwebp_QL65_.jpg',
-        description: 'Sweet and spicy pinwheel snack.',
-        category: 'snacks'
+        name: 'Toy Story Building Block Set',
+        price: 3990,
+        image: 'https://m.media-amazon.com/images/I/71d1PCram6L._AC_UL640_FMwebp_QL65_.jpg',
+        description: 'Building block set for constructing Toy Story scenes.',
+        category: 'Toy Story'
       },
       {
         id: 16,
-        name: 'Gol Gappay Mix',
-        price: 290,
-        image: 'https://chaiandchurros.com/wp-content/uploads/2021/06/GolGappayPic.jpeg',
-        description: 'Complete set for making gol gappay at home.',
-        category: 'mixes'
+        name: 'Toy Story Mini Character Set - Pack of 10',
+        price: 1990,
+        image: 'https://m.media-amazon.com/images/I/51lKAYKwQiL._AC_UL640_FMwebp_QL65_.jpg',
+        description: 'Mini character figures 10-pack, perfect for collectors.',
+        category: 'Toy Story'
       },
       {
         id: 17,
-        name: 'Bakarkhani',
-        price: 320,
-        image: 'https://www.masala.tv/wp-content/uploads/2015/04/1-3.jpg',
-        description: 'Traditional layered bread with a sweet and savory taste.',
-        category: 'bakery'
+        name: 'Toy Story Woody Walking Action Figure',
+        price: 3590,
+        image: 'https://m.media-amazon.com/images/I/71TLS3tkr3L._AC_UL640_FMwebp_QL65_.jpg',
+        description: 'Woody action figure with electronic walking function.',
+        category: 'Toy Story'
       },
       {
         id: 18,
-        name: 'Chana Chaat Mix',
-        price: 180,
-        image: 'https://www.flourandspiceblog.com/wp-content/uploads/2022/04/IMG_7091.jpg',
-        description: 'Spicy and tangy chickpea snack mix.',
-        category: 'mixes'
+        name: 'Toy Story Buzz Lightyear Talking Light-Up Figure',
+        price: 4390,
+        image: 'https://m.media-amazon.com/images/I/61-uKikc4-L._AC_UL640_FMwebp_QL65_.jpg',
+        description: 'Light and sound Buzz Lightyear action figure with multiple sound effects.',
+        category: 'Toy Story'
       },
       {
         id: 19,
-        name: 'Masala Chips',
-        price: 160,
-        image: 'https://m.media-amazon.com/images/I/81b-HK2+1SL._AC_UL640_FMwebp_QL65_.jpg',
-        description: 'Spicy potato chips with a blend of Pakistani spices.',
-        category: 'chips'
+        name: 'Toy Story Board Game',
+        price: 1990,
+        image: 'https://m.media-amazon.com/images/I/91Qyk8dLk6L._AC_UL640_FMwebp_QL65_.jpg',
+        description: 'Toy Story themed board game for family fun.',
+        category: 'Toy Story'
       },
       {
         id: 20,
-        name: 'Qeema Samosa',
-        price: 350,
-        image: 'https://www.teaforturmeric.com/wp-content/uploads/2025/02/Keema-Samosa-10.jpg',
-        description: 'Pastry filled with spiced minced meat.',
-        category: 'snacks'
+        name: 'Toy Story Sticker Book',
+        price: 690,
+        image: 'https://img.alicdn.com/imgextra/i3/2206705589443/O1CN01G0CR1Z2JcwzBdnJo8_!!2206705589443.jpg',
+        description: 'Collector edition sticker book with over a hundred stickers.',
+        category: 'Toy Story'
       },
       {
         id: 21,
-        name: 'Jalebi Mix',
-        price: 230,
-        image: 'https://m.media-amazon.com/images/I/616V6r54KlL._AC_UL640_FMwebp_QL65_.jpg',
-        description: 'Ready mix for making sweet and syrupy jalebi.',
-        category: 'sweets'
+        name: 'Toy Story 200-Piece Puzzle',
+        price: 1590,
+        image: 'https://gw.alicdn.com/imgextra/i3/525898961/O1CN01i0wImq2G4Bz6Iwv9p_!!525898961.jpg_Q75.jpg_.webp',
+        description: '200-piece puzzle with medium difficulty level.',
+        category: 'Toy Story'
       },
       {
         id: 22,
-        name: 'Badam Puri',
-        price: 270,
-        image: 'https://m.media-amazon.com/images/I/413ydPpzvbL._AC_UL640_FMwebp_QL65_.jpg',
-        description: 'Sweet flatbread with almond flavor.',
-        category: 'sweets'
+        name: 'Toy Story School Backpack',
+        price: 2290,
+        image: 'https://gw.alicdn.com/imgextra/O1CN01a9Ytjd25ABRUzCf17_!!6000000007485-2-yinhe.png_.webp',
+        description: 'Children school backpack with Toy Story characters design.',
+        category: 'Toy Story'
       },
       {
         id: 23,
-        name: 'Meethi Sev',
-        price: 190,
-        image: 'https://m.media-amazon.com/images/I/61JOQLzCi8L._AC_UL640_FMwebp_QL65_.jpg',
-        description: 'Sweet chickpea flour noodles.',
-        category: 'sweets'
+        name: 'Toy Story Children Umbrella',
+        price: 990,
+        image: 'https://gw.alicdn.com/imgextra/i2/67994278/O1CN01Q9fnZW1hTNEkH34xA_!!0-item_pic.jpg_300x300Q75.jpg_.webp',
+        description: 'Children umbrella with cartoon Toy Story characters.',
+        category: 'Toy Story'
       },
       {
         id: 24,
-        name: 'Karachi Halwa',
-        price: 310,
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS14Uu2l_YgbOLwCDwK0u5gF_CSErOJf9W6DB1XKmlyT9Om6Zo2qzldaMG0lvyR3lURPEwVNauo7fpVJGLOQDNdOzQgW6KuiEggozTWMWE',
-        description: 'Gelatinous sweet made from cornflour.',
-        category: 'sweets'
+        name: 'Toy Story Plush Shawl',
+        price: 1490,
+        image: 'https://gw.alicdn.com/imgextra/i4/3210627061/O1CN01rZ0nxE221zJSzA02n_!!3210627061.jpg_Q75.jpg_.webp',
+        description: 'Plush Shawl, warm and comfortable',
+        category: 'Toy Story'
       },
       {
         id: 25,
-        name: 'Roasted Chickpeas',
-        price: 140,
-        image: 'https://m.media-amazon.com/images/I/71fTwKFGgKL._AC_UL640_FMwebp_QL65_.jpg',
-        description: 'Crunchy and spicy roasted chickpeas.',
-        category: 'nuts'
+        name: 'Toy Story Stationery Set',
+        price: 1190,
+        image: 'https://gw.alicdn.com/imgextra/i4/44485139/O1CN01tqIo3I1npiLHa4NUC_!!44485139.jpg_Q75.jpg_.webp',
+        description: 'Stationery set including pencil case, pencils, etc.',
+        category: 'Toy Story'
       },
       {
         id: 26,
-        name: 'Papri',
-        price: 200,
-        image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSO8fMkdaaTiLVE8nQ1E-c9FAm8o6jIbLVwlqPt8Z2aQqUraM-vLIvfbNnVccHr-hsvlrce13BRdZWLLVifdc-zW2K7rlxrxrW4s3Ld5g',
-        description: 'Crispy fried dough wafers for chaat.',
-        category: 'snacks'
+        name: 'Toy Story Toy Story Childrens Water Bottle',
+        price: 890,
+        image: 'https://gw.alicdn.com/imgextra/i4/4066234693/O1CN01bE354h1kXRgp0NqmT_!!2-item_pic.png_.webp',
+        description: 'Childrens water bottle, healthy material',
+        category: 'Toy Story'
       },
       {
         id: 27,
-        name: 'Chilli Chips',
-        price: 170,
-        image: 'https://m.media-amazon.com/images/I/81nNivfShpL._AC_UL640_FMwebp_QL65_.jpg',
-        description: 'Spicy potato chips with chilli flavor.',
-        category: 'chips'
+        name: 'Toy Story Toy Story Childrens Tableware Set',
+        price: 1590,
+        image: 'https://gw.alicdn.com/imgextra/i3/2579209816/O1CN0185AewR2MNmUlXAIU7_!!2579209816.jpg_Q75.jpg_.webp',
+        description: 'Childrens tableware set, safe and environmentally friendly',
+        category: 'Toy Story'
       },
       {
         id: 28,
-        name: 'Boondi',
-        price: 160,
-        image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR6Y9OkrdycXsGfKB9k75K0gcltn8jwI7huzdcKkMWGvT6th33K_924ODGztgVJuHy-9HRg_6KYPqHeM7X8BAMM-rtaCuDbiEN6IDYjdQ',
-        description: 'Small, round chickpea flour balls, sweet or savory.',
-        category: 'snacks'
+        name: 'Toy Story Toy Story Childrens Backpack',
+        price: 1790,
+        image: 'https://m.media-amazon.com/images/I/91x+9JpRhVL._AC_UY580_.jpg',
+        description: 'Lightweight backpack, suitable for travel',
+        category: 'Toy Story'
       },
       {
         id: 29,
-        name: 'Masala Peanuts',
-        price: 180,
-        image: 'https://m.media-amazon.com/images/I/81irPBWYl8L._AC_UL640_FMwebp_QL65_.jpg',
-        description: 'Peanuts coated with spicy masala.',
-        category: 'nuts'
+        name: 'Toy Story Buzz Lightyear Projection Watch',
+        price: 1290,
+        image: 'https://m.media-amazon.com/images/I/81bHbB-taJL._AC_UL640_FMwebp_QL65_.jpg',
+        description: 'Projection watch, display time',
+        category: 'Toy Story'
       },
       {
         id: 30,
-        name: 'Balushahi',
-        price: 280,
-        image: 'https://m.media-amazon.com/images/I/81lYGGHnRJL._AC_UL640_FMwebp_QL65_.jpg',
-        description: 'Sweet, flaky pastry similar to a glazed donut.',
-        category: 'sweets'
+        name: 'Toy Story Toy Story Pajama Set',
+        price: 1990,
+        image: 'https://i.ebayimg.com/thumbs/images/g/QScAAOSwaIFnoPL~/s-l1200.jpg',
+        description: 'Childrens pajamas, comfortable fabric',
+        category: 'Toy Story'
+      },
+      {
+        id: 31,
+        name: 'Toy Story Toy Story Baseball Cap',
+        price: 790,
+        image: 'https://gw.alicdn.com/imgextra/i1/2210831850106/O1CN01rL4Ju41CeawC56eFH_!!2-item_pic.png_.webp',
+        description: 'Childrens Baseball Cap, Sun Protection',
+        category: 'Toy Story'
+      },
+      {
+        id: 32,
+        name: 'Toy Story Toy Story Childrens Socks 3 Pairs',
+        price: 590,
+        image: 'https://m.media-amazon.com/images/I/81pcLQhGXtL._AC_SX679_.jpg',
+        description: 'Childrens Socks, Comfortable and Breathable',
+        category: 'Toy Story'
+      },
+      {
+        id: 33,
+        name: 'Toy Story Toy Story Childrens T-shirt',
+        price: 990,
+        image: 'https://gw.alicdn.com/imgextra/i2/2206841533317/O1CN01mf5uOv1aNEg2FNPfL_!!2-item_pic.png_.webp',
+        description: 'Childrens T-shirt, pure cotton fabric',
+        category: 'Toy Story'
+      },
+      {
+        id: 34,
+        name: 'Toy Story Toy Story mobile phone case',
+        price: 790,
+        image: 'https://gw.alicdn.com/imgextra/i3/3369688614/O1CN01YjFpef2DVGZEL8lIB_!!3369688614.jpg_Q75.jpg_.webp',
+        description: 'Mobile phone protective case, multiple models available',
+        category: 'Toy Story'
+      },
+      {
+        id: 35,
+        name: 'Toy Story Toy Story keychain',
+        price: 490,
+        image: 'https://media.karousell.com/media/photos/products/2022/12/21/711__toy_story___1671637975_e771d4a8_progressive',
+        description: 'Exquisite keychain, multiple models available',
+        category: 'Toy Story'
       }
     ],
     cart: []

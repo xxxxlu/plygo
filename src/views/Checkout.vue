@@ -2,15 +2,28 @@
   <div class="checkout-page">
     <div class="container">
       <div class="page-header">
-        <h1>Checkout</h1>
+        <div class="title-wrapper">
+          <span class="material-icons checkout-title-icon">shopping_bag</span>
+          <h1>Checkout</h1>
+        </div>
       </div>
 
       <div class="checkout-empty" v-if="cart.length === 0">
         <div class="empty-checkout-message">
-          <span class="material-icons empty-checkout-icon">shopping_cart</span>
+          <div class="empty-checkout-circle">
+            <span class="material-icons empty-checkout-icon">shopping_cart</span>
+          </div>  
           <h2>Your cart is empty</h2>
           <p>You need to add items to your cart before checking out.</p>
-          <router-link to="/" class="btn">Shop Now</router-link>
+          <div class="checkout-deco">
+            <div class="deco-leaf leaf1"></div>
+            <div class="deco-leaf leaf2"></div>
+            <div class="deco-leaf leaf3"></div>
+          </div>
+          <router-link to="/" class="btn">
+            <span class="material-icons">shopping_basket</span>
+            Shop Now
+          </router-link>
         </div>
       </div>
 
@@ -26,6 +39,7 @@
           >
             <div class="step-number">{{ index + 1 }}</div>
             <div class="step-label">{{ step }}</div>
+            <span v-if="currentStep > index" class="material-icons step-check">check_circle</span>
           </div>
         </div>
 
@@ -271,16 +285,33 @@ export default {
 <style scoped>
 .checkout-page {
   padding: 40px 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23a5d6a7' fill-opacity='0.1'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 .page-header {
   margin-bottom: 30px;
 }
 
+.title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.checkout-title-icon {
+  font-size: 36px;
+  color: #4CAF50;
+  background-color: rgba(76, 175, 80, 0.1);
+  padding: 10px;
+  border-radius: 50%;
+  border: 2px dashed #c5e1a5;
+}
+
 .page-header h1 {
   font-size: 32px;
   position: relative;
   padding-bottom: 15px;
+  color: #2E7D32;
 }
 
 .page-header h1:after {
@@ -290,7 +321,8 @@ export default {
   left: 0;
   width: 60px;
   height: 3px;
-  background-color: #e60000;
+  background: linear-gradient(90deg, #4CAF50, #8BC34A);
+  border-radius: 4px;
 }
 
 .checkout-empty {
@@ -299,32 +331,117 @@ export default {
   align-items: center;
   justify-content: center;
   text-align: center;
+  position: relative;
 }
 
 .empty-checkout-message {
   max-width: 500px;
+  position: relative;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.15);
+  border: 2px dashed #c5e1a5;
+}
+
+.empty-checkout-circle {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #4CAF50, #8BC34A);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 6px 15px rgba(76, 175, 80, 0.3);
+  animation: float 4s infinite ease-in-out;
 }
 
 .empty-checkout-icon {
-  font-size: 64px;
-  color: #ccc;
-  margin-bottom: 20px;
+  font-size: 50px;
+  color: white;
+}
+
+.checkout-deco {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.deco-leaf {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(76, 175, 80, 0.1);
+  border-radius: 0 50% 50% 50%;
+  transform: rotate(45deg);
+}
+
+.leaf1 {
+  top: 20%;
+  left: 10%;
+  animation: leafFloat 8s infinite ease-in-out;
+}
+
+.leaf2 {
+  bottom: 15%;
+  right: 10%;
+  width: 40px;
+  height: 40px;
+  animation: leafFloat 6s infinite ease-in-out reverse;
+}
+
+.leaf3 {
+  top: 60%;
+  left: 20%;
+  width: 25px;
+  height: 25px;
+  animation: leafFloat 7s infinite ease-in-out 1s;
+}
+
+@keyframes leafFloat {
+  0%, 100% {
+    transform: rotate(45deg) translate(0, 0);
+  }
+  50% {
+    transform: rotate(30deg) translate(-10px, 10px);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .empty-checkout-message h2 {
   margin-bottom: 15px;
-  font-size: 24px;
+  font-size: 28px;
+  color: #2E7D32;
+  font-weight: 700;
 }
 
 .empty-checkout-message p {
   margin-bottom: 30px;
-  color: #666;
+  color: #555;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .checkout-steps {
   display: flex;
   justify-content: center;
   margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+  padding: 20px 0;
 }
 
 .step {
@@ -333,6 +450,7 @@ export default {
   align-items: center;
   width: 150px;
   position: relative;
+  transition: all 0.3s ease;
 }
 
 .step:not(:last-child):after {
@@ -341,17 +459,26 @@ export default {
   top: 20px;
   right: -50px;
   width: 100px;
-  height: 2px;
-  background-color: #ddd;
+  height: 3px;
+  background-color: #e8f5e9;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
 }
 
-.step.active .step-number, .step.completed .step-number {
-  background-color: #e60000;
+.step.active .step-number {
+  background: linear-gradient(135deg, #4CAF50, #8BC34A);
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+}
+
+.step.completed .step-number {
+  background-color: #81C784;
   color: white;
 }
 
 .step.completed:after {
-  background-color: #e60000;
+  background: linear-gradient(90deg, #81C784, #4CAF50);
 }
 
 .step-number {
@@ -359,31 +486,64 @@ export default {
   height: 40px;
   border-radius: 50%;
   background-color: #f5f5f5;
-  border: 1px solid #ddd;
+  border: 2px dashed #c5e1a5;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 600;
   margin-bottom: 10px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.step-check {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  color: #4CAF50;
+  background: white;
+  border-radius: 50%;
+  font-size: 18px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .step-label {
   font-size: 14px;
   font-weight: 500;
+  color: #388E3C;
+  margin-top: 5px;
 }
 
 .checkout-step-content {
   background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(76, 175, 80, 0.15);
   padding: 30px;
   margin-bottom: 40px;
+  border: 2px solid #e8f5e9;
+  position: relative;
+  overflow: hidden;
+}
+
+.checkout-step-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(76, 175, 80, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  z-index: 0;
 }
 
 .checkout-step-content h2 {
   font-size: 24px;
   margin-bottom: 30px;
   position: relative;
+  color: #2E7D32;
+  font-weight: 700;
+  display: inline-block;
 }
 
 .checkout-step-content h2:after {
@@ -391,9 +551,10 @@ export default {
   position: absolute;
   bottom: -10px;
   left: 0;
-  width: 50px;
+  width: 100%;
   height: 3px;
-  background-color: #e60000;
+  background: linear-gradient(90deg, #4CAF50, #8BC34A, rgba(139, 195, 74, 0.3));
+  border-radius: 3px;
 }
 
 .checkout-product-list {
@@ -403,16 +564,28 @@ export default {
 .checkout-product-item {
   display: flex;
   align-items: center;
-  padding: 15px;
-  border-bottom: 1px solid #eee;
+  padding: 18px 15px;
+  border-bottom: 1px dashed #c5e1a5;
+  background-color: rgba(232, 245, 233, 0.2);
+  margin-bottom: 10px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.checkout-product-item:hover {
+  background-color: rgba(232, 245, 233, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.1);
 }
 
 .checkout-product-image {
   width: 80px;
   height: 80px;
-  border-radius: 4px;
+  border-radius: 12px;
   overflow: hidden;
   margin-right: 15px;
+  border: 2px solid #e8f5e9;
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.15);
 }
 
 .checkout-product-image img {
@@ -432,33 +605,58 @@ export default {
 
 .checkout-product-price, .checkout-product-quantity {
   font-size: 14px;
-  color: #666;
-  margin: 0;
+  color: #558B2F;
+  margin: 5px 0;
+  background-color: rgba(197, 225, 165, 0.3);
+  padding: 2px 8px;
+  border-radius: 20px;
+  display: inline-block;
 }
 
 .checkout-product-total {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 16px;
   min-width: 120px;
   text-align: right;
+  color: #2E7D32;
+  background-color: rgba(165, 214, 167, 0.2);
+  padding: 8px 12px;
+  border-radius: 20px;
 }
 
 .checkout-total {
   text-align: right;
-  padding: 20px 0;
-  border-top: 1px solid #eee;
+  padding: 20px;
+  border-top: 2px dashed #c5e1a5;
   margin-bottom: 30px;
+  background-color: rgba(76, 175, 80, 0.05);
+  border-radius: 10px;
 }
 
 .checkout-total h3 {
-  font-size: 20px;
-  color: #e60000;
+  font-size: 22px;
+  color: #2E7D32;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.checkout-total h3::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(139, 195, 74, 0.3), #8BC34A, #4CAF50);
+  border-radius: 2px;
 }
 
 .step-actions {
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
+  gap: 15px;
 }
 
 .checkout-form h2 {
@@ -480,8 +678,8 @@ export default {
 }
 
 .payment-method {
-  border: 2px solid #eee;
-  border-radius: 8px;
+  border: 2px dashed #c5e1a5;
+  border-radius: 16px;
   padding: 15px;
   width: 160px;
   display: flex;
@@ -489,6 +687,13 @@ export default {
   align-items: center;
   cursor: pointer;
   transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+.payment-method:hover {
+  border-color: #8BC34A;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.1);
 }
 
 .payment-method img {
@@ -497,8 +702,10 @@ export default {
 }
 
 .payment-method.selected {
-  border-color: #e60000;
-  background-color: #fff9f9;
+  border-color: #4CAF50;
+  background-color: rgba(76, 175, 80, 0.05);
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.2);
+  transform: translateY(-5px);
 }
 
 .payment-method-details {
@@ -516,8 +723,22 @@ export default {
   margin: 0 auto;
   text-align: left;
   padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
+  background-color: rgba(232, 245, 233, 0.5);
+  border-radius: 16px;
+  border: 2px dashed #c5e1a5;
+  position: relative;
+  overflow: hidden;
+}
+
+.payment-steps::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(76, 175, 80, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
 }
 
 .payment-steps p {
@@ -526,17 +747,54 @@ export default {
 
 .order-summary {
   margin-top: 40px;
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 8px;
+  background-color: rgba(232, 245, 233, 0.5);
+  padding: 25px;
+  border-radius: 16px;
+  border: 2px solid #a5d6a7;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.1);
+}
+
+.order-summary::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(76, 175, 80, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
 }
 
 .order-summary h3 {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  color: #2E7D32;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+  font-size: 20px;
+}
+
+.order-summary h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #4CAF50, #8BC34A, rgba(139, 195, 74, 0.3));
+  border-radius: 2px;
 }
 
 .order-summary p {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #558B2F;
+  font-weight: 500;
 }
 
 @media (max-width: 768px) {
