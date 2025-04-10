@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- 基础圆形背景 -->
+  <circle cx="32" cy="32" r="30" fill="#5cb85c" />
+  
+  <!-- 玩具总动员风格的太空人头盔 -->
+  <circle cx="32" cy="32" r="20" fill="white" stroke="#4cae4c" stroke-width="2" />
+  
+  <!-- 头盔上的"翅膀"标志 -->
+  <path d="M32 15 L42 25 L32 35 L22 25 Z" fill="#33a033" stroke="#2c882c" stroke-width="1" />
+  
+  <!-- 小绿人的眼睛 -->
+  <circle cx="26" cy="28" r="3" fill="#333" />
+  <circle cx="38" cy="28" r="3" fill="#333" />
+  
+  <!-- 笑脸 -->
+  <path d="M25 38 Q32 45 39 38" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" />
+  
+  <!-- 星星装饰 -->
+  <path d="M10 10 L12 15 L8 12 L14 12 L10 15 Z" fill="#ffcc00" transform="rotate(15, 10, 10)" />
+  <path d="M50 15 L52 20 L48 17 L54 17 L50 20 Z" fill="#ffcc00" transform="rotate(45, 50, 15)" />
+  <path d="M52 48 L54 53 L50 50 L56 50 L52 53 Z" fill="#ffcc00" transform="rotate(-15, 52, 48)" />
+  <path d="M15 52 L17 57 L13 54 L19 54 L15 57 Z" fill="#ffcc00" transform="rotate(-45, 15, 52)" />
+</svg>

@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    wishlist: [],
     products: [
       {
         id: 1,
@@ -290,6 +291,15 @@ export default new Vuex.Store({
     cart: []
   },
   mutations: {
+    ADD_TO_WISHLIST(state, product) {
+      const existingItem = state.wishlist.find(item => item.id === product.id);
+      if (!existingItem) {
+        state.wishlist.push(product);
+      }
+    },
+    REMOVE_FROM_WISHLIST(state, productId) {
+      state.wishlist = state.wishlist.filter(item => item.id !== productId);
+    },
     ADD_TO_CART(state, { product, quantity }) {
       const existingItem = state.cart.find(item => item.id === product.id);
 
@@ -316,6 +326,12 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    addToWishlist({ commit }, product) {
+      commit('ADD_TO_WISHLIST', product);
+    },
+    removeFromWishlist({ commit }, productId) {
+      commit('REMOVE_FROM_WISHLIST', productId);
+    },
     addToCart({ commit, state }, { product, quantity }) {
       // Check if adding this product would exceed Rs. 50,000
       const currentTotal = state.cart.reduce((total, item) => total + (item.price * item.quantity), 0);
@@ -358,6 +374,10 @@ export default new Vuex.Store({
     }
   },
   getters: {
+    wishlist: state => state.wishlist,
+    isInWishlist: state => productId => {
+      return state.wishlist.some(item => item.id === productId);
+    },
     products: state => state.products,
     cart: state => state.cart,
     cartTotal: state => {

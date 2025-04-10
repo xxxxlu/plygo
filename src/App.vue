@@ -9,6 +9,12 @@
           <ul>
             <li><router-link to="/">Home</router-link></li>
             <li><router-link to="/contact">Contact Us</router-link></li>
+            <li class="wishlist-icon">
+              <router-link to="/wishlist">
+                <span class="material-icons">favorite</span>
+                <span class="wishlist-count" v-if="wishlistItemCount > 0">{{ wishlistItemCount }}</span>
+              </router-link>
+            </li>
             <li class="cart-icon">
               <router-link to="/cart">
                 <span class="material-icons">shopping_cart</span>
@@ -36,6 +42,7 @@
             <ul>
               <li><router-link to="/">Home</router-link></li>
               <li><router-link to="/cart">Cart</router-link></li>
+              <li><router-link to="/wishlist">Wishlist</router-link></li>
               <li><router-link to="/contact">Contact Us</router-link></li>
             </ul>
           </div>
@@ -61,7 +68,10 @@ import { mapGetters } from 'vuex';
 export default {
   name: 'App',
   computed: {
-    ...mapGetters(['cartItemCount'])
+    ...mapGetters(['cartItemCount', 'wishlist']),
+    wishlistItemCount() {
+      return this.wishlist.length;
+    }
   }
 }
 </script>
@@ -144,15 +154,19 @@ body {
   transform: scale(1.1);
 }
 
-.cart-icon {
+.cart-icon, .wishlist-icon {
   position: relative;
 }
 
-.cart-icon .material-icons {
+.cart-icon .material-icons, .wishlist-icon .material-icons {
   font-size: 24px;
 }
 
-.cart-count {
+.wishlist-icon .material-icons {
+  color: white;
+}
+
+.cart-count, .wishlist-count {
   position: absolute;
   top: -8px;
   right: -8px;
@@ -169,6 +183,11 @@ body {
   border: 2px solid #ffffff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   animation: bounce 2s infinite;
+}
+
+.wishlist-count {
+  background-color: #f44336;
+  color: white;
 }
 
 /* Main content */

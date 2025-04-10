@@ -1,4 +1,4 @@
-# pakistan-snacks-shop
+# plygo.shop
 
 ## Project setup
 ```

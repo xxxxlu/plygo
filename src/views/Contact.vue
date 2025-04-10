@@ -38,7 +38,7 @@
               </div>
               <div>
                 <h3>Address</h3>
-                <p class="info-text">123 Food Street, Gulberg</p>
+                <p class="info-text">plygo Food Street, Gulberg</p>
                 <p class="info-text">Lahore, Pakistan</p>
               </div>
             </div>

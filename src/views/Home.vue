@@ -45,7 +45,7 @@
         <div class="section-header">
           <div class="title-decoration">
             <div class="deco-line"></div>
-            <h2>About PLY PLY</h2>
+            <h2>About PLY GO</h2>
             <div class="deco-line"></div>
           </div>
           <p class="about-description">We're a premium online store specializing in high-quality products that bring joy to your everyday life. From delicious snacks to collectible toys, we curate only the best for our customers.</p>

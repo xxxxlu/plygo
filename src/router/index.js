@@ -7,6 +7,7 @@ import Checkout from '../views/Checkout.vue'
 import PaymentSuccess from '../views/PaymentSuccess.vue'
 import Contact from '../views/Contact.vue'
 import Products from '../views/Products.vue'
+import Wishlist from '../views/Wishlist.vue'
 
 Vue.use(VueRouter)
 
@@ -45,6 +46,11 @@ const routes = [
     path: '/contact',
     name: 'Contact',
     component: Contact
+  },
+  {
+    path: '/wishlist',
+    name: 'Wishlist',
+    component: Wishlist
   }
 ]
 

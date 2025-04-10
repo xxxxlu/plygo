@@ -21,7 +21,12 @@
 
         <div class="product-info">
           <div class="product-header">
-            <h1 class="product-name">{{ product.name }}</h1>
+            <div class="product-title-row">
+              <h1 class="product-name">{{ product.name }}</h1>
+              <button @click="toggleWishlist" class="wishlist-btn" :class="{ 'active': isInWishlist }">
+                <span class="material-icons">{{ isInWishlist ? 'favorite' : 'favorite_border' }}</span>
+              </button>
+            </div>
             <p class="product-price">Rs. {{ product.price.toLocaleString() }}</p>
             <div v-if="product.price < 500" class="special-badge">Special!</div>
           </div>
@@ -88,9 +93,9 @@
     </div>
 
     <div v-if="showMessage" class="notification">
-      <div class="notification-content">
-        <span class="material-icons success-icon">check_circle</span>
-        <p>Item added to cart successfully!</p>
+      <div class="notification-content" :class="{ 'error-notification': messageIcon === 'error' }">
+        <span class="material-icons success-icon">{{ messageIcon }}</span>
+        <p>{{ notificationMessage }}</p>
         <div class="notification-bubbles">
           <div class="bubble b1"></div>
           <div class="bubble b2"></div>
@@ -115,11 +120,16 @@ export default {
       quantity: 1,
       notFound: false,
       showMessage: false,
+      notificationMessage: 'Item added to cart successfully!',
+      messageIcon: 'check_circle',
       messageTimeout: null
     }
   },
   computed: {
-    ...mapGetters(['getProductById', 'products']),
+    ...mapGetters(['getProductById', 'products', 'isInWishlist']),
+    isInWishlist() {
+      return this.$store.getters.isInWishlist(this.productId);
+    },
     productId() {
       return parseInt(this.$route.params.id);
     },
@@ -135,6 +145,15 @@ export default {
     }
   },
   methods: {
+    toggleWishlist() {
+      if (this.isInWishlist) {
+        this.$store.dispatch('removeFromWishlist', this.productId);
+        this.showCustomMessage('Removed from wishlist');
+      } else {
+        this.$store.dispatch('addToWishlist', this.product);
+        this.showCustomMessage('Added to wishlist');
+      }
+    },
     formatCategory(category) {
       return category.charAt(0).toUpperCase() + category.slice(1);
     },
@@ -155,6 +174,11 @@ export default {
       }
     },
     showAddedMessage() {
+      this.showCustomMessage('Item added to cart successfully!');
+    },
+    showCustomMessage(message, type = 'success') {
+      this.notificationMessage = message;
+      this.messageIcon = type === 'error' ? 'error' : 'check_circle';
       this.showMessage = true;
 
       if (this.messageTimeout) {
@@ -180,6 +204,40 @@ export default {
 </script>
 
 <style scoped>
+.product-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.wishlist-btn {
+  background-color: rgba(232, 245, 233, 0.8);
+  border: 2px solid #a5d6a7;
+  border-radius: 50%;
+  width: 60px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wishlist-btn:hover {
+  transform: scale(1.1);
+  background-color: rgba(232, 245, 233, 1);
+}
+
+.wishlist-btn.active {
+  color: #f44336;
+  border-color: #f44336;
+  background-color: rgba(255, 236, 236, 0.4);
+}
+
+.wishlist-btn .material-icons {
+  font-size: 24px;
+}
 .product-details {
   padding: 30px 0;
   background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23a5d6a7' fill-opacity='0.1'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
@@ -568,12 +626,18 @@ export default {
 .notification-content {
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #4CAF50, #8BC34A);
+  background-color: #388E3C;
   color: white;
-  padding: 15px 20px;
-  border-radius: 12px;
+  padding: 12px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease forwards;
   position: relative;
   overflow: hidden;
+}
+
+.error-notification {
+  background-color: #f44336;
 }
 
 .notification-bubbles {
