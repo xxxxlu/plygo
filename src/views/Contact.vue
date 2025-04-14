@@ -28,18 +28,7 @@
               </div>
               <div>
                 <h3>Email</h3>
-                <p class="info-text">plygo@ply.go</p>
-              </div>
-            </div>
-
-            <div class="info-item">
-              <div class="icon-background">
-                <span class="material-icons">location_on</span>
-              </div>
-              <div>
-                <h3>Address</h3>
-                <p class="info-text">plygo Food Street, Gulberg</p>
-                <p class="info-text">Lahore, Pakistan</p>
+                <p class="info-text">plygo@plygo.shop</p>
               </div>
             </div>
 
